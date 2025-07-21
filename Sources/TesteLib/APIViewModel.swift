@@ -8,6 +8,9 @@
 import Foundation
 
 public class APIViewModel: ObservableObject, Observable {
+    
+    public init() {
+    }
 
     private let address: String = "https://pokeapi.co/api/v2/"
     
