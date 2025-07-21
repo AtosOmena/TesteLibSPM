@@ -5,26 +5,26 @@
 //  Created by Atos Brito Omena on 03/06/25.
 //
 
-class Pokemon: Codable, Identifiable{
+public class Pokemon: Codable, Identifiable{
     
-    let id: Int
-    let name: String
+    public let id: Int
+    public let name: String
     
-    let sprites: Sprites
+    public let sprites: Sprites
 }
 
-class PokemonIndex: Codable, Identifiable{
-    let name: String
-    let url: String
+public class PokemonIndex: Codable, Identifiable{
+    public let name: String
+    public let url: String
 }
 
-class Sprites: Codable{
-    let front_default: String
+public class Sprites: Codable{
+    public let front_default: String
 }
 
-class Page<T: Codable>: Codable, Identifiable{
-    let count: Int
-    let next: String
-    let previous: String?
-    let results: [T]
+public class Page<T: Codable>: Codable, Identifiable{
+    public let count: Int
+    public let next: String
+    public let previous: String?
+    public let results: [T]
 }

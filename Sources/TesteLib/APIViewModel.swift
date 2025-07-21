@@ -7,7 +7,7 @@
 
 import Foundation
 
-class APIViewModel: ObservableObject, Observable {
+public class APIViewModel: ObservableObject, Observable {
 
     private let address: String = "https://pokeapi.co/api/v2/"
     
@@ -16,17 +16,17 @@ class APIViewModel: ObservableObject, Observable {
     
     private var totalItems: Int?
     
-    func isFirstPage() -> Bool {
+    public func isFirstPage() -> Bool {
         return atualPage == 0
     }
     
-    func isLastPage() -> Bool {
+    public func isLastPage() -> Bool {
         guard let totalItems = totalItems else { return false }
         return (atualPage * pageSize) >= totalItems
     }
     
     // Solicita um pokemon na API dado um nome
-    func getPokemonByName(name: String) async throws -> Pokemon {
+    public func getPokemonByName(name: String) async throws -> Pokemon {
         
         let urlString = "\(address)pokemon/\(name)"
         
@@ -51,7 +51,7 @@ class APIViewModel: ObservableObject, Observable {
     }
     
     // Solicita uma lista contendo alguns pokemons
-    func getPokemonPage() async throws -> Page<PokemonIndex> {
+    public func getPokemonPage() async throws -> Page<PokemonIndex> {
         
         let urlString = "\(address)pokemon?offset=\(atualPage*pageSize)&limit=\(pageSize)"
         
